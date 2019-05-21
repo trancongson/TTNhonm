@@ -1,0 +1,83 @@
+﻿@using PagedList.Mvc;
+@using BTL_TTNhom.EF
+@model PagedList.IPagedList<SACH>
+@{
+    ViewBag.Title = "Quản lý sách";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Danh sách sách
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Danh sách người dùng</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Tên sách</th>
+                                    <th>Giá bán</th>
+                                    <th>Ảnh bìa</th>
+                                    <th>Số lượng</th>
+                                    <th>Mô tả</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                @foreach (var item in Model)
+                                {
+                                <tr id="row1_@item.MASACH">
+
+                                    <td>@item.TENSACH</td>
+                                    <td>@item.GIABAN</td>
+                                    <td>
+                                        <img src="~/@item.ANHBIA" style="width:50px; height: 50px;" />
+                                    </td>
+                                    <td>@item.SOLUONG</td>
+                                    <td>@item.MOTA</td>
+                                    <td>
+                                        <a href="@Url.Action("Edit","SanPham", new { @masach = item.MASACH})">Edit</a>
+                                        <a href="@Url.Action("Details","SanPham", new { @masach = item.MASACH})">Details</a>
+                                        @Ajax.ActionLink("Delete", "Delete",new { @masach = item.MASACH } ,new AjaxOptions
+                                   {
+                                       Confirm = "Bạn có muốn xóa bản ghi này?",
+                                       OnComplete = "$('#row1_"+@item.MASACH+"').remove()",
+                                       HttpMethod = "Delete"
+                                   })
+                                    </td>
+                                </tr>
+                                }
+                            </tfoot>
+                        </table>
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/assets/admin/vendor/jquery/jquery.min.js"></script>
+<script src="~/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="~/assets/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="~/assets/admin/js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="~/assets/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="~/assets/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="~/assets/admin/js/demo/datatables-demo.js"></script>
+

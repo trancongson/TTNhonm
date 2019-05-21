@@ -1,0 +1,60 @@
+﻿/* css-section1 */
+.section-1 {
+    margin: 50px 0px;
+}
+
+    .section-1 .body-content {
+        margin: 20px 0px;
+    }
+
+        .section-1 .body-content .content-1 {
+            background: rgb(228, 228, 228);
+            border-radius: 10px;
+        }
+
+.form {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.section-1 .body-content .content-1 .title-text {
+    margin-top: 10px;
+}
+
+.section-1 .body-content .content-1 .ng-scope, .check-order {
+    padding-right: 8px;
+}
+
+.section-1 .body-content .content-1 .ng-scope-1 {
+    padding-top: 5px;
+}
+
+.section-1 .body-content .content-1 .btn {
+    margin-bottom: 10px;
+    float: right;
+}
+
+    .section-1 .body-content .content-1 .btn:hover {
+        background: black;
+        border: 1px solid black;
+    }
+.section-1 .body-content .right-test {  
+    padding-left: 30px;
+}
+
+    .section-1 .body-content .right-test .ma-title {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Verdana;
+    }
+
+    .section-1 .body-content .right-test .status-title {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .section-1 .body-content .right-test .price {
+        color: red;
+        font-weight: 500;
+        font-size: 20px;
+    }

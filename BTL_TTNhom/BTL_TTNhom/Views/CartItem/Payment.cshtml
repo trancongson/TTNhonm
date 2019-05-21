@@ -1,0 +1,76 @@
+﻿@using BTL_TTNhom.Models;
+@model List<CartItem>
+@{
+    ViewBag.Title = "Thanh toán";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/css/giohang.css" rel="stylesheet" />
+<section class="section-2">
+    <div class="container" style="background-color: white; padding-bottom: 20px;">
+        <div class="row" style="padding-top: 20px;">
+            <div class="col-lg-12">
+                <h1>
+                    <span>Thanh toán</span>
+                </h1>
+                @if (Model.Count > 0)
+                {
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>Mã sản phẩm</td>
+                                <td>Tên sản phẩm</td>
+                                <td>Ảnh sản phẩm</td>
+                                <td>Số lượng</td>
+                                <td>Đơn giá</td>
+                                <td>Thành tiền</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.SACH.MASACH</td>
+                                    <td>@item.SACH.TENSACH</td>
+                                    <td><img src="~/@item.SACH.ANHBIA" style="width:50px; height:60px;" /></td>
+                                    <td><input type="text" class="txtQuantity" data-id="@item.SACH.MASACH" value="@item.Quantity" style="width:50px;" /></td>
+                                    <td>@item.SACH.GIABAN.GetValueOrDefault(0).ToString("N0")</td>
+                                    <td>@((item.SACH.GIABAN.GetValueOrDefault(0) * item.Quantity).ToString("N0"))</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+            <div class="col-lg-6">         
+                <div class="section group">
+                    <div class="col-md-6">
+                        @using (Html.BeginForm("Payment", "CartItem", FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                <label>Người nhận</label>
+                                <input name="shipName" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Điện thoại</label>
+                                <input name="mobile" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Địa chỉ</label>
+                                <input name="address" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input name="email" class="form-control" />
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="btnDeleteAll">Gửi đơn hàng</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Action("PartialSachHot", "Sach")
+<script src="~/Scripts/js/cartController.js"></script>

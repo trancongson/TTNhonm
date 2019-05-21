@@ -1,0 +1,12 @@
+D:\Web\BTL_TTNhom\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Web\BTL_TTNhom\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\Web\BTL_TTNhom\Model\bin\Debug\Model.exe.config
+D:\Web\BTL_TTNhom\Model\bin\Debug\Model.exe
+D:\Web\BTL_TTNhom\Model\bin\Debug\Model.pdb
+D:\Web\BTL_TTNhom\Model\bin\Debug\EntityFramework.dll
+D:\Web\BTL_TTNhom\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Web\BTL_TTNhom\Model\bin\Debug\EntityFramework.xml
+D:\Web\BTL_TTNhom\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Web\BTL_TTNhom\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Web\BTL_TTNhom\Model\obj\Debug\Model.exe
+D:\Web\BTL_TTNhom\Model\obj\Debug\Model.pdb

@@ -1,0 +1,160 @@
+﻿@using BTL_TTNhom.Models;
+@model CTSach
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/css/chitietsp.css" rel="stylesheet" />
+
+<section class="slider" style="margin-bottom:0px;">
+    <div class="container" style="background-color: white; padding-bottom: 30px;">
+        <div class="row" style="padding-top: 20px;">
+            <div class="col-lg-3">
+                @Html.Action("ChudePartial", "Chude")
+            </div>            
+            <div class="col-lg-9">
+                <form class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-6 col-12 product-detail-left">
+                        <div class="chitiet">
+                            <div class="col-large-image">
+                                <a href="">
+                                    <div class="zoom" id="ex1">
+                                        <img id="myimage" src="~/@Model.AnhBia" style="height: 340px; width: 300px;">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-12 detail-pro">
+                        <h1 class="title-pro">@Model.TenSach</h1>
+                        <div class="fw">
+                            <div class="group-status">
+                                <span class="first-status">
+                                    <span class="a_name">Chủ đề: </span>
+                                    <span class="status-name">@Model.TenChuDe</span>
+                                    <span class="name-1">|</span>
+                                </span>
+                                <span class="second-status">
+                                    <span class="a_name">Mã sản phẩm: </span>
+                                    <span class="status-name">@Model.MaSach</span>
+                                </span>
+                                <br>
+                                <span class="second-status">
+                                    <span class="a_name">Tác giả: </span>
+                                    <span class="status-name">@Model.TenTacGia</span>
+                                </span>
+                            </div>
+                            <div class="price-box">
+                                <span class="special-price">
+                                    <span class="price-sale">@(String.Format("{0:0,0}", Model.GiaBan))₫</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="pro-summary">
+                            <div class="text-line">
+                                <p>
+                                    @Model.MoTa
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-pro">
+                            <div class="form-box">
+                                <label class="not_bg" style="font-weight: bold;">Số lượng: </label>
+                                <input type="text" class="btn" value="1">
+                            </div>                                                       
+                                <a href="@Url.Action("AddItem","CartItem", new { productId=Model.MaSach, quantity=1 })" style="text-decoration: none">
+                                    <input type="button" class="btn btn-primary" value="Thêm giỏ hàng" />
+                                </a>                            
+                                @*<button type="submit" class="btn btn-primary btn-2 float-right">
+                                    <i class="fa fa-shopping-bag" style="margin-right: 10px;"></i>
+                                    <span>Mua sản phẩm</span>
+                                </button>*@
+                        </div>
+                        <div class="info">
+                            <img src="~/Image/logo-sach.png" alt="#">
+                            <div class="info-contact">
+                                <span>Đặt mua qua điện thoại (8h - 21h)</span>
+                                <a href="tel:(036)3600035">(036) 3600035</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="row tab-width">
+                    <div class="col-lg-12 col-12">
+                        <ul class="tabs">
+                            <li class="tab-link current" data-tab="tab-1">Mô tả</li>
+                            <li class="tab-link" data-tab="tab-2">Bình luận sản phẩm</li>
+                        </ul>
+                        <div id="tab-1" class="tab-content current">
+                            <div class="rte">
+                                <ul>
+                                    <li>
+                                        Tight pants next level keffiyeh you probably haven't heard of them.
+                                        Photo booth beard raw denim letterpress vegan messenger bag stumptown.
+                                        Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american
+                                        apparel have a terry richardson vinyl chambray. Beard stumptown, cardigans
+                                        banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's
+                                        cleanse vegan chambray. A really ironic artisan whatever keytar, scenester
+                                        farm-to-table banksy Austin twitter handle freegan cred raw denim single-origin coffee viral.
+                                    </li>
+                                    <li>
+                                        Tight pants next level keffiyeh you probably haven't heard of them.
+                                        Photo booth beard raw denim letterpress vegan messenger bag stumptown.
+                                        Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american
+                                        apparel have a terry richardson vinyl chambray. Beard stumptown, cardigans
+                                        banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's
+                                        cleanse vegan chambray. A really ironic artisan whatever keytar, scenester
+                                        farm-to-table banksy Austin twitter handle freegan cred raw denim single-origin coffee viral.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="tab-2" class="tab-content">
+                            <div class="rte">
+                                <div class="title-bl">
+                                    <h4>Đánh giá sản phẩm</h4>
+                                </div>
+                                <div class="review-sub">
+                                    <div class="review-subs">
+                                        <h3>0</h3>
+                                        <div class="star">
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="user">
+                                            <span>0</span>
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="submit">
+                                        <button class="btn btn-primary">Viết đánh giá</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</section>
+
+@Html.Action("PartialSachHot")
+
+<script>
+    $(document).ready(function(){
+
+        $('ul.tabs li').click(function(){
+            var tab_id = $(this).attr('data-tab');
+
+            $('ul.tabs li').removeClass('current');
+            $('.tab-content').removeClass('current');
+
+            $(this).addClass('current');
+            $("#"+tab_id).addClass('current');
+        })
+    })
+</script>

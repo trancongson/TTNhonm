@@ -1,0 +1,110 @@
+.owl-theme .owl-controls{
+	margin-top: 10px;
+	text-align: center;
+}
+
+/* Styling Next and Prev buttons */
+
+.silder-body .owl-controls .owl-buttons{
+	color: #FFF;
+	display: flex;
+	position: absolute;
+	padding: 8px 8px;
+	font-size: 12px;
+	top: 110px;
+	right: 10px;
+	
+}
+
+.owl-theme .owl-controls.clickable .owl-buttons div:hover{
+	text-decoration: none;
+}
+
+
+/* css-silder */
+.silder-body .owl-controls.clickable .owl-buttons .owl-prev,.silder-body .owl-next {
+	background-color: #ff4f89;
+	margin-right: 10px;
+	height: 28px;
+	width: 28px;
+	border: 1px solid white;
+}
+.silder-body .owl-controls.clickable .owl-buttons .owl-prev:hover, .silder-body .owl-next:hover {
+	background-color: #ff4f89;
+	border: 1px solid #ff4f89;
+}
+.silder-body .owl-controls.clickable .owl-buttons .owl-prev i, .silder-body .owl-next i {
+	color: white;
+	padding-top: 7px;
+}
+/* css partner */
+.partner-body .owl-controls .owl-buttons {
+	color: #FFF;
+	display: flex;
+	position: absolute;
+	padding: 8px 8px;
+	font-size: 12px;
+	bottom: 148px;
+	right: -9px;
+}
+.partner-body .owl-controls.clickable .owl-buttons .owl-prev,.partner-body .owl-next {
+	background-color: white;
+	margin-right: 10px;
+	height: 28px;
+	width: 28px;
+	border: 1px solid silver;
+}
+.partner-body .owl-controls.clickable .owl-buttons .owl-prev:hover,.partner-body .owl-next:hover {
+	background-color: #ff4f89;
+	border: 1px solid #ff4f89;
+}
+.partner-body .owl-controls.clickable .owl-buttons .owl-prev i,.partner-body .owl-next i {
+	padding-top: 8px;
+	color: rgb(57, 57, 57);
+}
+
+
+/* Styling Pagination*/
+
+.owl-theme .owl-controls .owl-page{
+	display: inline-block;
+	zoom: 1;
+	*display: inline;/*IE7 life-saver */
+}
+.owl-theme .owl-controls .owl-page span{
+	display: block;
+	width: 12px;
+	height: 12px;
+	margin: 5px 7px;
+	filter: Alpha(Opacity=50);/*IE7 fix*/
+	opacity: 0.5;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background: #869791;
+}
+
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+	filter: Alpha(Opacity=100);/*IE7 fix*/
+	opacity: 1;
+}
+
+/* If PaginationNumbers is true */
+
+.owl-theme .owl-controls .owl-page span.owl-numbers{
+	height: auto;
+	width: auto;
+	color: #FFF;
+	padding: 2px 10px;
+	font-size: 12px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+/* preloading images */
+.owl-item.loading{
+	min-height: 150px;
+	background: url(AjaxLoader.gif) no-repeat center center
+}

@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Kiemtradonhang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using BTL_TTNhom.Models;
+@model List<KTDonHang>
+<link href="~/Content/css/Kiemtradonhang.css" rel="stylesheet" />
+<section class="section-1">
+    <div class="container"  style="background-color: white; padding-bottom: 20px;">
+        <div class="row body-content"  style="padding-top: 20px;">
+            <div class="col-md-5 content-1">
+                <div id="os-search-box-test">
+                    <h5 class="title-text text-center">
+                        <b>
+                            <i class="fas fa-search"></i><span>Kiểm tra đơn hàng</span>
+                        </b>
+                    </h5>
+                    <hr>
+                    <form action="/KhachHang/Kiemtradonhang" class="form" method="get">     
+                        <div class="form-group" id="emailAddress">
+                            <label for="emailAdd">Địa chỉ Email</label>
+                            <input type="email" class="form-control" placeholder="email@gmail.com" name="Email">
+                        </div>
+                        <div class="form-group ng-scope-1" id="phoneNumber">
+                            <label for="phoneNumber">Số điện thoại</label>
+                            <input type="text" class="form-control" placeholder="xxxx xxx xxx" name="Number">
+                        </div>                      
+                        <button type="submit" class="btn btn-primary" onclick="show()">Kiểm tra</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-7 right-test">
+                @foreach (var item in Model)
+                {
+                    <div class="title">
+                        <span class="ma-title">Mã đơn hàng: </span>
+                        <span class="ma-title">#@item.MaDonHang</span>
+                    </div>
+                    <div class="title">
+                        <span class="status-title">Họ tên khách hàng: </span>
+                        <span class="name-title">@item.HoTen</span>
+                    </div>
+                    <div class="title">
+                        <span class="status-title">Địa chỉ nhận hàng: </span>
+                        <span class="name-title">@item.DiaChi</span>
+                    </div>
+                    <div class="title">
+                        <span class="status-title">Ngày đặt hàng: </span>
+                        <span class="name-title">@item.NgayDat</span>
+                    </div>
+                    <div class="title">
+                        <span class="status-title">Email: </span>
+                        <span class="name-title">@item.Email</span>
+                    </div>
+                    <div class="title">
+                        <span class="status-title">Số điện thoại: </span>
+                        <span class="name-title">@item.Dienthoai</span>
+                    </div>
+                    <div class="title">
+                        <span class="status-title">Tổng tiền: </span>
+                        <span class="price">@(String.Format("{0:0,0}", item.ThanhTien))₫</span>
+                    </div>                  
+                }
+            </div>
+        </div>
+    </div>
+</section>

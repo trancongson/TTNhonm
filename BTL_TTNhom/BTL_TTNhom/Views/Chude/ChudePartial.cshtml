@@ -1,0 +1,152 @@
+﻿@using BTL_TTNhom.Models.Entity;
+@model List<CHUDE>
+
+    <div class="left-menu">
+        <h3>Danh mục</h3>
+        <ul class="left-body">
+            @foreach (var item in Model)
+            {
+                <li class="row-left" id="menu-row">
+                    <a href="@Url.Action("Sachtheochude", new { @MaChuDe = item.MACHUDE})">@item.TENCHUDE</a>
+                    <b class="caret d-none d-lg-block d-xl-block">
+                        <i class="fas fa-angle-right"></i>
+                    </b>                    
+                </li>
+            }
+            <li class="row-left" id="menu-row">
+                <a href="@Url.Action("Sachmoi","Chude")">Sách mới</a>
+                <b class="caret d-none d-lg-block d-xl-block">
+                    <i class="fas fa-angle-right"></i>
+                </b>
+            </li>
+        </ul>
+    </div>
+
+    @*<div class="left-menu">
+        <h3>Danh mục</h3>
+        <ul class="left-body">
+            <li class="row-left" id="menu-row">
+                <a href="#">Văn học</a>
+                <b class="caret d-none d-lg-block d-xl-block">
+                    <i class="fas fa-angle-right"></i>
+                </b>
+                <ul class="row-left-1  d-none d-lg-block d-xl-block" id="menu-row-1">
+                    <li>
+                        <a href="#">Tiểu thuyết</a>
+                    </li>
+                    <li>
+                        <a href="#">Truyện ngắn</a>
+                    </li>
+                    <li>
+                        <a href="#">Ngôn tình</a>
+                    </li>
+                    <li>
+                        <a href="#">Trinh thám - kiếm hiệp</a>
+                    </li>
+                    <li>
+                        <a href="#">Giả tưởng - kinh dị</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="row-left" id="menu-row">
+                <a href="#">Kinh tế</a>
+                <b class="caret d-none d-lg-block d-xl-block">
+                    <i class="fas fa-angle-right"></i>
+                </b>
+                <ul class="row-left-1  d-none d-lg-block d-xl-block" id="menu-row-1">
+                    <li>
+                        <a href="#">Nhân vật - kinh doanh</a>
+                    </li>
+                    <li>
+                        <a href="#">Quản trị - lãnh đạo</a>
+                    </li>
+                    <li>
+                        <a href="#">Marketing - bán hàng</a>
+                    </li>
+                    <li>
+                        <a href="#">Khởi nghiệp - làm giàu</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="row-left" id="menu-row">
+                <a href="#">Kỹ năng sống</a>
+                <b class="caret d-none d-lg-block d-xl-block">
+                    <i class="fas fa-angle-right"></i>
+                </b>
+                <ul class="row-left-1 d-none d-lg-block d-xl-block" id="menu-row-1">
+                    <li>
+                        <a href="#">Tâm lý - kỹ năng sống</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="row-left" id="menu-row">
+                <a href="#">Sách thiếu nhi</a>
+                <b class="caret d-none d-lg-block d-xl-block">
+                    <i class="fas fa-angle-right"></i>
+                </b>
+                <ul class="row-left-1 d-none d-lg-block d-xl-block" id="menu-row-1">
+                    <li>
+                        <a href="#">Manga - Comic</a>
+                    </li>
+                    <li>
+                        <a href="#">Truyện Đọc</a>
+                    </li>
+                    <li>
+                        <a href="#">Truyện Thiếu Nhi</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="row-left" id="menu-row">
+                <a href="#">Sách giáo khoa</a>
+                <b class="caret d-none d-lg-block d-xl-block">
+                    <i class="fas fa-angle-right"></i>
+                </b>
+                <ul class="row-left-1 d-none d-lg-block d-xl-block" id="menu-row-1">
+                    <li>
+                        <a href="#">Cấp 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Cấp 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Cấp 3</a>
+                    </li>
+                    <li>
+                        <a href="#">Sách giáo viên</a>
+                    </li>
+                    <li>
+                        <a href="#">Giáo trình đại học</a>
+                    </li>
+                    <li>
+                        <a href="#">Tài liệu tham khảo</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="row-left" id="menu-row">
+                <a href="#">Sách ngoại ngữ</a>
+                <b class="caret d-none d-lg-block d-xl-block">
+                    <i class="fas fa-angle-right"></i>
+                </b>
+                <ul class="row-left-1 d-none d-lg-block d-xl-block" id="menu-row-1">
+                    <li>
+                        <a href="#">Tiếng Anh</a>
+                    </li>
+                    <li>
+                        <a href="#">Tiếng nhật</a>
+                    </li>
+                    <li>
+                        <a href="#">Tiếng Hoa</a>
+                    </li>
+                    <li>
+                        <a href="#">Tiếng Hàn</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="row-left" id="menu-row">
+                <a href="#">Sách mới</a>
+                <b class="caret d-none d-lg-block d-xl-block">
+                    <i class="fas fa-angle-right"></i>
+                </b>
+            </li>
+        </ul>
+    </div>*@

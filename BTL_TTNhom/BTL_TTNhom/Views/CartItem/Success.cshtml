@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Success";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/css/giohang.css" rel="stylesheet" />
+<section class="section-2">
+    <div class="container" style="background-color: white; padding-bottom: 20px;">
+        <div class="row" style="padding-top: 20px;">
+            <div class="col-lg-12">
+                <h1>
+                    <span class="alert-success">Bạn đặt hàng thành công!!!!</span>
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+@Html.Action("PartialSachHot", "Sach")
